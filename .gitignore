@@ -1,0 +1,20 @@
+# ROS 2 generated folders
+build/
+install/
+log/
+
+# TF/view_frames generated files
+frames_*.gv
+frames_*.pdf
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Editor files
+.vscode/
+.idea/
+
+# Temporary/backup files
+*.save
+*.swp

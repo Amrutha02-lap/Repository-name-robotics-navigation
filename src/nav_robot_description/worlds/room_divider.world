@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="room">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <model name="walls">
+      <static>true</static>
+      <link name="link">
+        <collision name="n"><pose>0 4 1 0 0 0</pose><geometry><box><size>8 0.2 2</size></box></geometry></collision>
+        <visual name="n"><pose>0 4 1 0 0 0</pose><geometry><box><size>8 0.2 2</size></box></geometry></visual>
+        <collision name="s"><pose>0 -4 1 0 0 0</pose><geometry><box><size>8 0.2 2</size></box></geometry></collision>
+        <visual name="s"><pose>0 -4 1 0 0 0</pose><geometry><box><size>8 0.2 2</size></box></geometry></visual>
+        <collision name="e"><pose>4 0 1 0 0 0</pose><geometry><box><size>0.2 8 2</size></box></geometry></collision>
+        <visual name="e"><pose>4 0 1 0 0 0</pose><geometry><box><size>0.2 8 2</size></box></geometry></visual>
+        <collision name="w"><pose>-4 0 1 0 0 0</pose><geometry><box><size>0.2 8 2</size></box></geometry></collision>
+        <visual name="w"><pose>-4 0 1 0 0 0</pose><geometry><box><size>0.2 8 2</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="box1">
+      <static>true</static>
+      <pose>2 1.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>1 1 1</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="box2">
+      <static>true</static>
+      <pose>-2 -1.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.8 1.5 1</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.8 1.5 1</size></box></geometry></visual>
+      </link>
+    </model>
+    <model name="divider">
+      <static>true</static>
+      <link name="link">
+        <collision name="d1"><pose>1.5 -1 1 0 0 0</pose><geometry><box><size>0.2 6 2</size></box></geometry></collision>
+        <visual name="d1"><pose>1.5 -1 1 0 0 0</pose><geometry><box><size>0.2 6 2</size></box></geometry></visual>
+      </link>
+    </model>
+  </world>
+</sdf>

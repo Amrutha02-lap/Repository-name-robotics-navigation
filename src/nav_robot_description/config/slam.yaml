@@ -1,0 +1,32 @@
+slam_toolbox:
+  ros__parameters:
+
+    # Our robot frames
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+
+    # LiDAR topic
+    scan_topic: /scan
+
+    # Gazebo uses simulation time
+    use_sim_time: true
+
+    # Basic mapping settings
+    mode: mapping
+    resolution: 0.05
+    max_laser_range: 10.0
+    min_laser_range: 0.1
+    minimum_time_interval: 0.5
+    transform_publish_period: 0.02
+    map_update_interval: 5.0
+    transform_timeout: 0.2
+    tf_buffer_duration: 30.0
+
+    # Scan matching
+    use_scan_matching: true
+    use_scan_barycenter: true
+
+    # Movement needed before processing another scan
+    minimum_travel_distance: 0.1
+    minimum_travel_heading: 0.1
