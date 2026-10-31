@@ -3,14 +3,15 @@
 <package format="3">
   <name>lidar_navigation</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>LiDAR obstacle stop, Nav2 command bridge and sensor nodes</description>
   <maintainer email="amruthasprasad01@gmail.com">amrutha</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT</license>
 
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
   <depend>geometry_msgs</depend>
-
+  <depend>nav2_simple_commander</depend>
+  
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>

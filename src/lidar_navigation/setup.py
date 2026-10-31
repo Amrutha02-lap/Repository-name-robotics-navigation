@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='amrutha',
     maintainer_email='amruthasprasad01@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='LiDAR obstacle stop, Nav2 command bridge and sensor nodes',
+    license='MIT',
     extras_require={
         'test': [
             'pytest',
@@ -27,6 +27,7 @@ setup(
             'navigation = lidar_navigation.lidar_reader:main',
             'simulator = lidar_navigation.lidar_simulator:main',
             'voice_command_bridge = lidar_navigation.voice_command_bridge:main',
+	    'camera_reader = lidar_navigation.camera_reader:main',
         ],
     },
 )

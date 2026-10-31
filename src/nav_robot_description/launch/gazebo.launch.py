@@ -13,14 +13,12 @@ def generate_launch_description():
 
     package_dir = get_package_share_directory('nav_robot_description')
 
-    urdf_file = os.path.join(
-        package_dir,
-        'urdf',
-        'nav_robot.urdf'
-    )
+    urdf_file = os.path.join(package_dir, 'urdf', 'nav_robot.urdf')
 
     with open(urdf_file, 'r') as file:
         robot_description = file.read()
+
+    world_file = os.path.join(package_dir, 'worlds', 'room.world')
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -29,28 +27,17 @@ def generate_launch_description():
                 'launch',
                 'gazebo.launch.py'
             )
-        )
-    )
-    world_file = os.path.join(package_dir, 'worlds', 'room.world')
-
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(
-                get_package_share_directory('gazebo_ros'),
-                 'launch',
-                'gazebo.launch.py'
-            )
         ),
         launch_arguments={'world': world_file}.items()
     )
+
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
-        parameters=[
-            {'robot_description': robot_description,
-             'use_sim_time': True
-            }
-        ]
+        parameters=[{
+            'robot_description': robot_description,
+            'use_sim_time': True
+        }]
     )
 
     spawn_robot = Node(
@@ -58,7 +45,8 @@ def generate_launch_description():
         executable='spawn_entity.py',
         arguments=[
             '-topic', 'robot_description',
-            '-entity', 'nav_robot'
+            '-entity', 'nav_robot',
+            '-x', '0.0', '-y', '0.0', '-z', '0.1', '-Y', '0.0'
         ],
         output='screen'
     )
