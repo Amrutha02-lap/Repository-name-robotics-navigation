@@ -18,3 +18,5 @@ __pycache__/
 # Temporary/backup files
 *.save
 *.swp
+*.bak
+*.save
